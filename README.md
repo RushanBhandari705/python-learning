@@ -10,3 +10,5 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -Random Password Generator
 -Roots of quadratic Equation
 -Square root of number
+-palindrom
+-vowel or not

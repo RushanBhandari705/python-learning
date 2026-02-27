@@ -12,3 +12,4 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -Square root of number
 -palindrom
 -vowel or not
+-ATM

@@ -13,3 +13,4 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -palindrom
 -vowel or not
 -ATM
+-Rock Paper and Scissor

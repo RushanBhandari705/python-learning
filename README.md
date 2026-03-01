@@ -14,3 +14,4 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -vowel or not
 -ATM
 -Rock Paper and Scissor
+-Number Guesser

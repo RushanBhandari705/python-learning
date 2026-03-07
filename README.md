@@ -16,4 +16,4 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -Rock Paper and Scissor
 -Number Guesser
 -Quiz
-
+-Fibonacci series

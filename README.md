@@ -1,4 +1,4 @@
-# Python Learning Journey 🐍
+# Python Learning Journey
 
 This repository contains my daily Python practice and mini projects.
 

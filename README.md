@@ -17,3 +17,4 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -Number Guesser
 -Quiz
 -Fibonacci series
+-cv

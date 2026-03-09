@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curriculum Vitae – Diza Gurung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --teal: #2a7f7f;
+      --teal-light: #3aa8a8;
+      --cream: #f8f6f1;
+      --warm-white: #ffffff;
+      --text-dark: #1e1e1e;
+      --text-mid: #444;
+      --text-soft: #777;
+      --accent: #c8a96e;
+      --border: #ddd5c8;
+    }
+
+    body {
+      background: #e8e4dc;
+      font-family: 'Lato', sans-serif;
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .cv-wrapper {
+      width: 820px;
+      background: var(--warm-white);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* HEADER */
+    .cv-header {
+      background: var(--navy);
+      color: white;
+      padding: 44px 48px 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cv-header::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(42,127,127,0.18);
+    }
+    .cv-header::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: 200px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: rgba(200,169,110,0.1);
+    }
+
+    .header-text { position: relative; z-index: 1; }
+
+    .cv-subtitle {
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .cv-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .cv-role {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cv-contacts {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact-item {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.78);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .contact-item svg {
+      flex-shrink: 0;
+      opacity: 0.75;
+    }
+
+    .photo-box {
+      width: 110px;
+      height: 130px;
+      border: 2.5px solid var(--accent);
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .photo-box img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .photo-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+    }
+    .ph-circle {
+      width: 40px; height: 40px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      margin: 0 auto 7px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ph-text { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+    /* ACCENT BAR */
+    .accent-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 60%, var(--accent) 100%);
+    }
+
+    /* BODY */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background: var(--cream);
+      padding: 34px 26px;
+      border-right: 1px solid var(--border);
+    }
+
+    .sidebar-section { margin-bottom: 28px; }
+    .sidebar-section:last-child { margin-bottom: 0; }
+
+    .section-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 13px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--teal);
+    }
+
+    .detail-row { margin-bottom: 10px; }
+    .detail-label {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-soft);
+      margin-bottom: 2px;
+    }
+    .detail-value {
+      font-size: 12.5px;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    /* Skills */
+    .skill-item {
+      font-size: 12px;
+      color: var(--text-mid);
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .skill-item:last-child { border-bottom: none; }
+    .skill-dot {
+      width: 5px; height: 5px;
+      background: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* References */
+    .ref-item { margin-bottom: 15px; }
+    .ref-item:last-child { margin-bottom: 0; }
+    .ref-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .ref-title {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+    .ref-phone {
+      font-size: 11.5px;
+      color: var(--teal);
+      margin-top: 3px;
+      font-weight: 600;
+    }
+
+    /* MAIN */
+    .main-content { padding: 34px 38px; }
+
+    .main-section { margin-bottom: 28px; }
+    .main-section:last-child { margin-bottom: 0; }
+
+    .main-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-dot {
+      width: 8px; height: 8px;
+      background: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Academic Table */
+    .acad-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    .acad-table thead tr { background: var(--navy); color: white; }
+    .acad-table thead th {
+      padding: 9px 13px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .acad-table tbody tr { border-bottom: 1px solid var(--border); }
+    .acad-table tbody tr:nth-child(even) { background: var(--cream); }
+    .acad-table tbody td {
+      padding: 10px 13px;
+      color: var(--text-mid);
+      vertical-align: middle;
+    }
+    .acad-table tbody td:first-child { font-weight: 700; color: var(--text-dark); }
+
+    .badge {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .badge-gold { background: var(--accent); color: var(--navy); }
+
+    /* Training Table */
+    .train-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .train-table thead tr { background: var(--teal); color: white; }
+    .train-table thead th {
+      padding: 9px 13px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .train-table tbody tr { border-bottom: 1px solid var(--border); }
+    .train-table tbody tr:nth-child(even) { background: var(--cream); }
+    .train-table tbody td {
+      padding: 10px 13px;
+      color: var(--text-mid);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .train-table tbody td:first-child { color: var(--text-dark); }
+
+    .year-tag {
+      display: inline-block;
+      border: 1.5px solid var(--teal);
+      color: var(--teal);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    /* Work experience */
+    .exp-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #eef7f7;
+      border: 1.5px solid var(--teal-light);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+
+    /* FOOTER */
+    .cv-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      padding: 12px;
+      text-transform: uppercase;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .cv-wrapper { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="cv-wrapper">
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <div class="header-text">
+      <p class="cv-subtitle">Curriculum Vitae</p>
+      <h1 class="cv-name">Diza Gurung</h1>
+      <p class="cv-role">PCL Nursing Graduate &nbsp;&middot;&nbsp; Fresher</p>
+      <div class="cv-contacts">
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Itahari-04, Sunsari (Temporary)
+        </div>
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.76a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+          9814377053
+        </div>
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bed9cbcccbd0d9dad7c4dffed9d3dfd7d290ddd1d3">[email&#160;protected]</a>
+        </div>
+      </div>
+    </div>
+    <div class="photo-box">
+      <!-- To add photo: replace the div below with <img src="your-photo.jpg" alt="Diza Gurung"> -->
+      <div class="photo-placeholder">
+        <div class="ph-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="ph-text">Photo</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accent-bar"></div>
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Personal Details -->
+      <div class="sidebar-section">
+        <div class="section-label">Personal Details</div>
+        <div class="detail-row">
+          <div class="detail-label">Sex</div>
+          <div class="detail-value">Female</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Date of Birth</div>
+          <div class="detail-value">2063/06/17 (B.S.)</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Marital Status</div>
+          <div class="detail-value">Unmarried</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Nationality</div>
+          <div class="detail-value">Nepali</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Temporary Address</div>
+          <div class="detail-value">Itahari-04, Sunsari</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">Permanent Address</div>
+          <div class="detail-value">Putalisadak, Syangja-06</div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="sidebar-section">
+        <div class="section-label">Skills</div>
+        <div class="skill-item"><span class="skill-dot"></span>Patient Care and Monitoring</div>
+        <div class="skill-item"><span class="skill-dot"></span>Vital Signs Assessment</div>
+        <div class="skill-item"><span class="skill-dot"></span>Medical Administration</div>
+        <div class="skill-item"><span class="skill-dot"></span>Infection Control Practices</div>
+        <div class="skill-item"><span class="skill-dot"></span>Communication and Teamwork</div>
+      </div>
+
+      <!-- References -->
+      <div class="sidebar-section">
+        <div class="section-label">References</div>
+        <div class="ref-item">
+          <div class="ref-name">Mrs. Junu Karki</div>
+          <div class="ref-title">Nursing Instructor</div>
+          <div class="ref-phone">9842408390</div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-name">Mrs. Priyanka Shah</div>
+          <div class="ref-title">Nursing Instructor</div>
+          <div class="ref-phone">9808330395</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- Work Experience -->
+      <div class="main-section">
+        <div class="main-section-title"><span class="title-dot"></span>Work Experience</div>
+        <div class="exp-pill">Fresher — Ready to Begin Professional Practice</div>
+      </div>
+
+      <!-- Academic Qualifications -->
+      <div class="main-section">
+        <div class="main-section-title"><span class="title-dot"></span>Academic Qualifications</div>
+        <table class="acad-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Degree</th>
+              <th>Passed Year</th>
+              <th>Major / Subject</th>
+              <th>Result</th>
+              <th>Board</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>PCL Nursing</td>
+              <td>2025</td>
+              <td>Nursing</td>
+              <td><span class="badge badge-gold">77.87%</span></td>
+              <td>BHC</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>SEE</td>
+              <td>2022</td>
+              <td>SEE</td>
+              <td><span class="badge">2.80 GPA</span></td>
+              <td>H.E.B.S.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Training & Development -->
+      <div class="main-section">
+        <div class="main-section-title"><span class="title-dot"></span>Training &amp; Personal Development</div>
+        <table class="train-table">
+          <thead>
+            <tr>
+              <th>Training / Opportunities</th>
+              <th>Organizer</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Medical, Surgery, Orthopedic, Physiotherapy, CSSD</td>
+              <td>Koshi Zonal Hospital</td>
+              <td><span class="year-tag">1st Year</span></td>
+            </tr>
+            <tr>
+              <td>Medical, Surgery, ENT, Emergency, OT, ICU, Psychiatric</td>
+              <td>BMCTH</td>
+              <td><span class="year-tag">2nd Year</span></td>
+            </tr>
+            <tr>
+              <td>Pediatric, Gynae, Labour, NICU, ANW, PNW</td>
+              <td>BMCTH</td>
+              <td><span class="year-tag">3rd Year</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cv-footer">

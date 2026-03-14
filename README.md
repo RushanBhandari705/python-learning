@@ -18,3 +18,6 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -Quiz
 -Fibonacci series
 -cv
+-prime check
+-leap year
+-reverse

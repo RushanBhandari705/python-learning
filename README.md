@@ -21,3 +21,6 @@ To improve my Python fundamentals and problem-solving skills by coding daily.
 -prime check
 -leap year
 -reverse
+-armstrong
+-swap
+-star pyramid

@@ -3,7 +3,7 @@ import random
 choices = ["rock", "paper", "scissors"]
 computer = random.choice(choices)
 
-player = input("Enter rock, paper, or scissors: ")
+player = input("Enter rock, paper, or scissor: ")
 
 if player == computer:
     print("It's a tie!")

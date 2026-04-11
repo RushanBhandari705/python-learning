@@ -1,5 +1,5 @@
 word = input("Enter a word: ")
-vowels = "aeiouAEIOU"
+vowels = "aeiouAEIOUBC"
 count = 0
 
 for letter in word:

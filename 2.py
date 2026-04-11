@@ -1,4 +1,4 @@
-#WAP that asks the user to enter the names and prices of three items they are purchasing.
+
 Item1= str(input("Enter the name of the item1:"))
 Item1_Price=float(input("Enter the price of item1"))
 Item2=str(input("Enter the name of the item2:"))

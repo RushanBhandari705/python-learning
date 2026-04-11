@@ -1,4 +1,4 @@
-print("Welcome to Python ATM")
+print("Welcome to Python")
 
 balance = 1000
 correct_pin = "1234"

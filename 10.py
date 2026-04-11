@@ -14,4 +14,4 @@ if answer == "30":
 else:
     print("Wrong!")
 
-print("Your final score is:", score)
+print("Your final score is :", score)
